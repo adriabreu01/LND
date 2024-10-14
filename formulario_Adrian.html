@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Información Personal</title>
+</head>
+<body>
+    <form action="" method="get"></form>
+    <h1>Formulario de contacto</h1>
+    <fieldset><legend>Información Personal</legend><br>
+        
+        <Label for="Nombre">Nombre:</Label>
+        <input type="text" name="name" id="name" required maxlength="20"><br>
+        
+        <Label for="Apellido">Apellido:</Label>
+        <input type="text" name="surname" id="surname" required maxlength="30"><br>
+
+        <label for="DNI">DNI:</label>
+        <input type="text" name="DNI" id="DNI" pattern="[0-9](8)[A-Za-z](1)" minlength="9"><br>
+        
+        <!-- REVISAR ESTE CAMPO -->
+        <Label for="Teléfono">Teléfono:</Label>
+        <input type="tel" name="tel" id="tel" maxlength="15" pattern="[0,9]{9,15}" placeholder="Ej: 612345678"><br>
+
+        <Label for="Email">Email:</Label>
+        <input type="email" name="email" id="email" required><br>
+        
+    </fieldset>
+    <fieldset>
+        <legend>Detalles del Contacto</legend>
+        <Label for="ref">Asunto:</Label>
+        <select name="ref" id="ref" size="3" multiple required>
+            <option value="pre">Pedir Presupuesto</option>
+            <option value="cita">Solicitar Cita Previa</option>
+            <option value="otros">Otros</option>
+        </select>
+
+<!-- Tipo radio ha de ser excluyente, para ello usar mismo name, distinto id -->
+        <br><label for="Trabajo">¿Trabajas?</label><br>
+        <input type="radio" name="trabaja" id="Sí" value="trabaja" checked> Sí
+        <input type="radio" name="trabaja" id="No" value="trabaja2"> No
+
+        <br><label for="conocer">Cómo nos ha conocido?</label><br>
+        <input type="checkbox" name="conocer" id="amigo"> Un amigo
+        <input type="checkbox" name="conocer" id="googleando" checked> Googleando
+        <input type="checkbox" name="conocer" id="buzoneo"> Buzoneo
+        <input type="checkbox" name="conocer" id="otros"> Otros 
+    </fieldset>
+
+    <fieldset>
+        <legend>Información Adicional</legend>
+        <label for="mensaje">Mensaje:</label>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="5" maxlength="300" placeholder="Escribe tu mensaje aqui..."></textarea><br>
+        <input type="checkbox" name="clausula" id="clausula" required> 
+        <label for="clausula"> Acepto la <a href="https://www.boe.es/doue/2016/119/L00001-00088.pdf">cláusula de RGPD</a> </label> 
+    </fieldset>
+    <input type="submit" id="enviar">
+    <input type="reset" id="limpiar">
+</body>
+</html>
